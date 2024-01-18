@@ -13,7 +13,7 @@ export const addpoke = async (req: Request, res: Response) => {
     res.status(200).send({
         name:newPoke.name,
         id:newPoke.id,
-        type:newPoke.tipo
+        tipo:newPoke.tipo
     });
   } catch (error) {
     res.status(500).send(error.message);
