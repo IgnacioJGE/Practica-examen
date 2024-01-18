@@ -5,7 +5,7 @@ import { getallpoke } from "./resolvers/getPoke.ts";
 import { getapoke } from "./resolvers/getonepoke.ts";
 import { addpoke } from "./resolvers/addpoke.ts";
 const env = await load();
-const MONGO_URL=env.MONGO_URL||Deno.env.get('MONGO_URL_1')
+const MONGO_URL=env.MONGO_URL||Deno.env.get('MONGO_URL')
 if(!MONGO_URL){
   console.log("No MONGO_URL")
  console.error();
