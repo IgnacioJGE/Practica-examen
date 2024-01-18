@@ -12,6 +12,6 @@ const pokeSchema = new Schema(
   { timestamps: true }
 );
 
-export type PokeModelType = mongoose.Document &(pokemon);
+export type PokeModelType = mongoose.Document&(pokemon);
 
 export const ModeloPoke= mongoose.model<PokeModelType>("Pokemons", pokeSchema);

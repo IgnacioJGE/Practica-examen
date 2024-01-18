@@ -1,11 +1,12 @@
 import { Request, Response } from "npm:express@4.18.2";
 import { ModeloPoke } from "../db/pokemon.ts";
+
 export const addpoke = async (req: Request, res: Response) => {
   try {
 
     const {name,id,type}= req.body;
 
-console.log(name,type,id)
+    console.log(name,type,id)
     const newCoche = new ModeloPoke({name,type,id});
     await newCoche.save();
 

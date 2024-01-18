@@ -20,7 +20,6 @@ app.get("/getallpokemon",getallpoke)
    .get("/getpoke/:id",getapoke)
    .post("/addpoke",addpoke)
 const PORT=env.PORT||Deno.env.get("PORT")
-
 app.listen(PORT,()=> console.info ((`Te estoy escuchando desde ${PORT}`)));
 
 }catch(e){
