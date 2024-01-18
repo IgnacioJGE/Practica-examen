@@ -7,13 +7,13 @@ export const addpoke = async (req: Request, res: Response) => {
     const {name,id,type}= req.body;
 
     console.log(name,type,id)
-    const newCoche = new ModeloPoke({name,type,id});
-    await newCoche.save();
+    const newPoke = new ModeloPoke({name,type,id});
+    await newPoke.save();
 
     res.status(200).send({
-        name:newCoche.name,
-        id:newCoche.id,
-        type:newCoche.tipo
+        name:newPoke.name,
+        id:newPoke.id,
+        type:newPoke.tipo
     });
   } catch (error) {
     res.status(500).send(error.message);
