@@ -7,7 +7,7 @@ const pokeSchema = new Schema(
   {
     name: { type: String, required: true },
     id: { type: Number, required: true, unique: true },
-    type: { type: String, required: true },
+    tipo: { type: String, required: true },
   },
   { timestamps: true }
 );
