@@ -4,7 +4,7 @@ import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 import { getallpoke } from "./resolvers/getPoke.ts";
 import { getapoke } from "./resolvers/getonepoke.ts";
 const env = await load();
-const MONGO_URL=env.MONGO_URL||Deno.env.get('MONGO_URL')
+const MONGO_URL=env.MONGO_URL||Deno.env.get('MONGO_URL_1')
 if(!MONGO_URL){
   console.log("No MONGO_URL")
  console.error();
