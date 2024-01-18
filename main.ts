@@ -3,6 +3,7 @@ import mongoose from "npm:mongoose@8.1.0";
 import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 import { getallpoke } from "./resolvers/getPoke.ts";
 import { getapoke } from "./resolvers/getonepoke.ts";
+import { addpoke } from "./resolvers/addpoke.ts";
 const env = await load();
 const MONGO_URL=env.MONGO_URL||Deno.env.get('MONGO_URL_1')
 if(!MONGO_URL){
@@ -17,6 +18,7 @@ const app= express();
 app.use(express.json())
 app.get("/getallpokemon",getallpoke)
    .get("/getpoke/:id",getapoke)
+   .post("/addpoke",addpoke)
 const PORT=env.PORT||Deno.env.get("PORT")
 
 app.listen(PORT,()=> console.info ((`Te estoy escuchando desde ${PORT}`)));
