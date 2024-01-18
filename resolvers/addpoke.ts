@@ -4,10 +4,10 @@ import { ModeloPoke } from "../db/pokemon.ts";
 export const addpoke = async (req: Request, res: Response) => {
   try {
 
-    const {name,id,type}= req.body;
+    const {name,id,tipo}= req.body;
 
-    console.log(name,type,id)
-    const newPoke = new ModeloPoke({name,type,id});
+    console.log(name,tipo,id)
+    const newPoke = new ModeloPoke({name,tipo,id});
     await newPoke.save();
 
     res.status(200).send({
