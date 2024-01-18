@@ -5,7 +5,7 @@ export const addpoke = async (req: Request, res: Response) => {
 
     const {name,id,type}= req.body;
 
-
+console.log(name,type,id)
     const newCoche = new ModeloPoke({name,type,id});
     await newCoche.save();
 
