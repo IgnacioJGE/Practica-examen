@@ -12,7 +12,7 @@ export const getapoke = async (req: Request, res: Response) => {
       console.log(id);
       const datos= await fetch(`${URL}${id}`);
       const pokemonpelao:pokemonfinall= await datos.json();
-      const newPoke= new ModeloPoke({name:pokemonpelao.name,type:pokemonpelao.types[0].type.name,id:pokemonpelao.id})
+      const newPoke= new ModeloPoke({name:pokemonpelao.name ,id:pokemonpelao.id,type:pokemonpelao.types[0].type.name})
        await newPoke.save();
       res.status(200).send({
         name:pokemonpelao.name,
