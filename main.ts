@@ -4,13 +4,13 @@ import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 import { getallpoke } from "./resolvers/getPoke.ts";
 import { getapoke } from "./resolvers/getonepoke.ts";
 const env = await load();
-
-try{
 const MONGO_URL=env.MONGO_URL||Deno.env.get('MONGO_URL')
 if(!MONGO_URL){
   console.log("No MONGO_URL")
  console.error();
+ Deno.exit(1);
 }
+try{
 await mongoose.connect(MONGO_URL);
 console.info("Mongo Concectado")
 const app= express();
